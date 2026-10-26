@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TISE — Smart solar for every home</title>
+  <meta name="description" content="TISE tracks what your panels produce, stores what you don't use and runs your home on clean energy — from one calm, intelligent app." />
+  <meta name="theme-color" content="#EEF5F1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 795'%3E%3Cpath fill='%2300E89A' fill-rule='evenodd' d='M321 0H479V205L628 60L740 172L595 317H800V477H595V637H479V795H321V637H205V477H0V317H205L60 172L172 60L321 205ZM205 477L400 285L595 477Z'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 800 795"><path fill-rule="evenodd" d="M321 0H479V205L628 60L740 172L595 317H800V477H595V637H479V795H321V637H205V477H0V317H205L60 172L172 60L321 205ZM205 477L400 285L595 477Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z" fill="currentColor"/></symbol>
+    <symbol id="drag" viewBox="0 0 24 24"><path d="M8 12h8M5 12l3-3M5 12l3 3M19 12l-3-3M19 12l-3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="nav" id="top">
+    <a class="logo" href="#top" aria-label="TISE home">
+      <svg class="logo-mark"><use href="#mark"/></svg><span>TISE</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#top" class="is-active">Home</a>
+      <a href="#features">Features</a>
+      <a href="#why">Solutions</a>
+      <a href="#experience">How it works</a>
+      <a href="#ecosystem">Insights</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><svg class="i-sun"><use href="#sun"/></svg><svg class="i-moon"><use href="#moon"/></svg></button>
+      <a href="#" class="nav-login">Log in</a>
+      <a href="#finale" class="btn btn-ink btn-sm">Get started</a>
+      <button class="nav-burger" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-sky" aria-hidden="true">
+        <span class="stars"></span>
+        <svg class="birds" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice">
+          <g class="bird b1"><path d="M0 6 Q7 -2 15 9 Q23 -2 30 6"/></g>
+          <g class="bird b2"><path d="M0 6 Q7 -2 15 9 Q23 -2 30 6"/></g>
+          <g class="bird b3"><path d="M0 6 Q7 -2 15 9 Q23 -2 30 6"/></g>
+          <g class="bird b4"><path d="M0 6 Q7 -2 15 9 Q23 -2 30 6"/></g>
+          <g class="bird b5"><path d="M0 6 Q7 -2 15 9 Q23 -2 30 6"/></g>
+        </svg>
+      </div>
+
+      <div class="hero-copy">
+        <div class="badge reveal">
+          <span class="avatars"><i style="--h:150">MF</i><i style="--h:200">RN</i><i style="--h:30">DO</i></span>
+          Trusted by 12,000+ homes
+        </div>
+        <h1 class="reveal">Power your home.<br><span>Own every ray of sun.</span></h1>
+        <p class="reveal">TISE tracks what your panels produce, stores what you don't use and runs your home on clean energy — all from one calm, intelligent app.</p>
+        <div class="hero-btns reveal">
+          <a href="#experience" class="btn btn-mint">Explore dashboard <svg><use href="#arrow"/></svg></a>
+          <a href="#features" class="btn btn-ghost">Discover features</a>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="heroStage">
+        <canvas id="heroCanvas" aria-label="Interactive 3D model of a TISE solar home. Drag to rotate."></canvas>
+
+        <div class="spot" data-anchor="solar" data-key="solar"><button aria-label="Solar array"><i></i></button><span>Solar array</span></div>
+        <div class="spot" data-anchor="battery" data-key="battery"><button aria-label="Home battery"><i></i></button><span>TISE Battery</span></div>
+        <div class="spot" data-anchor="living" data-key="living"><button aria-label="Living space"><i></i></button><span>Smart home</span></div>
+
+        <aside class="spot-card" aria-live="polite">
+          <button class="spot-close" aria-label="Close">×</button>
+          <small data-f="eyebrow">Solar array</small>
+          <strong data-f="value">4.8 kW</strong>
+          <p data-f="text">10 panels producing right now.</p>
+          <div class="spot-bar"><i data-f="bar"></i></div>
+        </aside>
+
+        <div class="stage-ui">
+          <span class="hint"><svg><use href="#drag"/></svg> Drag to explore</span>
+          <button class="mode" id="modeToggle" aria-pressed="false" aria-label="Toggle night mode">
+            <span class="mode-opt"><svg><use href="#sun"/></svg></span>
+            <span class="mode-opt"><svg><use href="#moon"/></svg></span>
+            <span class="mode-knob"></span>
+          </button>
+        </div>
+
+        <div class="live-chip">
+          <span class="dot"></span> Live
+          <b data-live="solar">4.8 kW</b><em>solar</em>
+          <b data-live="batt">82%</b><em>battery</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logos">
+      <p>Trusted by homeowners and energy professionals</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="lg lg-1">Northwatt</span><span class="lg lg-2">HALDEN</span><span class="lg lg-3">sunfield</span><span class="lg lg-4">Arcwave</span><span class="lg lg-5">VOLTRA</span><span class="lg lg-6">Lumen&amp;Co</span><span class="lg lg-7">Kestrel Grid</span>
+          <span class="lg lg-1" aria-hidden="true">Northwatt</span><span class="lg lg-2" aria-hidden="true">HALDEN</span><span class="lg lg-3" aria-hidden="true">sunfield</span><span class="lg lg-4" aria-hidden="true">Arcwave</span><span class="lg lg-5" aria-hidden="true">VOLTRA</span><span class="lg lg-6" aria-hidden="true">Lumen&amp;Co</span><span class="lg lg-7" aria-hidden="true">Kestrel Grid</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <div class="head reveal">
+        <span class="eyebrow">Powerful features</span>
+        <h2>Everything you need to<br>run a solar home</h2>
+      </div>
+      <div class="feat-grid">
+        <article class="feat reveal" style="--lift:0px">
+          <img data-shot="feat-monitor" alt="Close-up of rooftop solar panels at golden hour" />
+          <div class="feat-body"><h3>Real-time monitoring</h3><p>Track every panel, every kilowatt, every minute — live.</p></div>
+          <span class="feat-tag"><i></i> 4.8 kW now</span>
+        </article>
+        <article class="feat reveal" style="--lift:44px">
+          <img data-shot="feat-battery" alt="TISE home battery mounted on an exterior wall" />
+          <div class="feat-body"><h3>Battery management</h3><p>Charge when the sun is out, spend when rates spike.</p></div>
+          <span class="feat-tag"><i></i> 82% charged</span>
+        </article>
+        <article class="feat reveal" style="--lift:88px">
+          <img data-shot="feat-analytics" alt="Solar home at dusk with warm lights on" />
+          <div class="feat-body"><h3>Energy analytics</h3><p>Daily, monthly and lifetime insights in plain language.</p></div>
+          <span class="feat-tag"><i></i> −61% grid bill</span>
+        </article>
+        <article class="feat reveal" style="--lift:12px">
+          <img data-shot="feat-proactive" alt="Cutaway living room lit at night" />
+          <div class="feat-body"><h3>Proactive care</h3><p>TISE spots faults early and books service before you notice.</p></div>
+          <span class="feat-tag"><i></i> All systems OK</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why" id="why">
+      <div class="why-left">
+        <span class="eyebrow reveal">Why homeowners switch</span>
+        <h2 class="reveal">A smarter way to power your everyday life.</h2>
+        <ol class="why-list">
+          <li class="is-active"><button><b>Complete visibility</b><span>Production, storage and usage in one live view.</span></button></li>
+          <li><button><b>Better energy awareness</b><span>Know which appliances draw the most, and when.</span></button></li>
+          <li><button><b>Performance monitoring</b><span>Panel-level health checks every 15 minutes.</span></button></li>
+          <li><button><b>Informed energy decisions</b><span>Forecasts pick the best hour to run the dishwasher.</span></button></li>
+        </ol>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-media">
+          <img data-shot="why-0" alt="" class="is-on" />
+          <img data-shot="why-1" alt="" />
+          <img data-shot="why-2" alt="" />
+          <img data-shot="why-3" alt="" />
+        </div>
+        <div class="why-chip"><span class="dot"></span><div><b data-why-title>Complete visibility</b><small data-why-text>Every source and load, side by side, in real time.</small></div></div>
+        <div class="why-stats">
+          <div><b><span data-count="4.8" data-dec="1">0</span> kW</b><small>Solar output</small></div>
+          <div><b><span data-count="98">0</span>%</b><small>System health</small></div>
+          <div><b><span data-count="82">0</span>%</b><small>Battery</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="experience" id="experience">
+      <div class="fold-track" id="foldTrack">
+        <div class="fold-stage">
+          <div class="head reveal">
+            <span class="eyebrow">Modern experience</span>
+            <h2>Your entire solar system.<br>One clear view.</h2>
+            <a href="#ecosystem" class="btn btn-mint">Explore dashboard <svg><use href="#arrow"/></svg></a>
+          </div>
+          <div class="fold-scene">
+            <div class="fold-shadow" id="foldShadow"></div>
+            <div class="fold device" id="device">
+              <!-- Left screen: home overview -->
+              <div class="fold-half fold-l">
+                <div class="screen"><div class="screen-ui dash">
+                  <div class="sb"><b>12:40</b><span class="sb-icons"><i></i><i></i><i></i><em></em></span></div>
+                  <div class="dash-top"><span class="logo logo-sm"><svg class="logo-mark"><use href="#mark"/></svg><span>TISE</span></span><span class="dash-user">MF</span></div>
+                  <div class="scr-title"><small>Home energy overview</small><b>Today, 12:40</b></div>
+                  <div class="dash-hero">
+                    <img data-shot="dash" alt="" />
+                    <span class="dash-pin p1"><i></i>Solar <b>4.6 kW</b></span>
+                    <span class="dash-pin p2"><i></i>Battery <b>78%</b></span>
+                    <span class="dash-pin p3"><i></i>Home <b>1.2 kW</b></span>
+                  </div>
+                  <div class="mini-row">
+                    <div class="dash-card"><small>Produced</small><b>32.4 kWh</b></div>
+                    <div class="dash-card"><small>Self-powered</small><b>86%</b></div>
+                    <div class="dash-card"><small>CO₂ saved</small><b>18 kg</b></div>
+                  </div>
+                </div></div>
+              </div>
+              <span class="hinge" aria-hidden="true"></span>
+              <!-- Right half: inner screen on the front, cover screen on the back -->
+              <div class="fold-half fold-r" id="foldR">
+                <div class="face face-front">
+                  <div class="screen"><div class="screen-ui dash">
+                    <div class="sb sb-r"><span class="sb-icons"><i></i><i></i><i></i><em></em></span></div>
+                    <nav class="tabs"><b>Overview</b><span>Energy</span><span>Battery</span><span>Devices</span></nav>
+                    <div class="dash-card">
+                      <div class="dc-head"><small>Production</small><b>32.4 kWh</b></div>
+                      <svg class="chart" viewBox="0 0 300 120" preserveAspectRatio="none">
+                        <defs><linearGradient id="cg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#00E89A" stop-opacity=".45"/><stop offset="1" stop-color="#00E89A" stop-opacity="0"/></linearGradient></defs>
+                        <path class="chart-area" d="M0 115 C40 112 60 95 90 70 S140 18 165 16 S220 40 250 78 S290 112 300 114 V120 H0Z" fill="url(#cg)"/>
+                        <path class="chart-line" pathLength="1" d="M0 115 C40 112 60 95 90 70 S140 18 165 16 S220 40 250 78 S290 112 300 114" fill="none" stroke="#00C887" stroke-width="2.5"/>
+                        <path class="chart-use" d="M0 100 C30 96 50 104 80 98 S130 92 160 96 S220 86 250 70 S290 80 300 84" fill="none" stroke="#0B1A20" stroke-width="1.5" stroke-dasharray="3 4" opacity=".5"/>
+                      </svg>
+                      <div class="dc-legend"><span><i class="mint"></i>Solar</span><span><i class="ink"></i>Usage</span></div>
+                    </div>
+                    <div class="dash-row">
+                      <div class="dash-card ring-card">
+                        <svg viewBox="0 0 80 80" class="ring"><circle cx="40" cy="40" r="32"/><circle cx="40" cy="40" r="32" class="ring-v" style="--v:.78"/></svg>
+                        <div><b>78%</b><small>Battery</small></div>
+                      </div>
+                      <div class="dash-card devices">
+                        <div><span>EV charger</span><i class="tog on"></i></div>
+                        <div><span>Heat pump</span><i class="tog on"></i></div>
+                        <div><span>Pool pump</span><i class="tog"></i></div>
+                      </div>
+                    </div>
+                    <div class="dash-card tip"><span class="tip-ico"><svg><use href="#sun"/></svg></span><div><b>Best hour today: 13:00</b><small>Run the dishwasher on pure sunshine.</small></div></div>
+                  </div></div>
+                  <i class="fold-shade"></i>
+                </div>
+                <div class="face face-back">
+                  <div class="screen"><div class="screen-ui cover">
+                    <span class="punch"></span>
+                    <div class="cv-date">Monday, 26 October</div>
+                    <div class="cv-time">12:40</div>
+                    <div class="cv-widgets">
+                      <div><small>Solar now</small><b>4.6 kW</b><svg class="cv-mark"><use href="#mark"/></svg></div>
+                      <div><small>Battery</small><b>78%</b><i class="cv-bar" style="--v:.78"></i></div>
+                    </div>
+                    <div class="cv-note"><span class="dot"></span>Charging from the sun</div>
+                    <div class="cv-foot"><svg><use href="#mark"/></svg>TISE</div>
+                  </div></div>
+                  <i class="fold-shade"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="reveal"><b><span data-count="4.62" data-dec="2">0</span> kW</b><small>Solar production</small></div>
+        <div class="reveal"><b><span data-count="95.1" data-dec="1">0</span>%</b><small>Panel efficiency</small></div>
+        <div class="reveal"><b><span data-count="78">0</span>%</b><small>Battery storage</small></div>
+        <div class="reveal"><b><span data-count="99.2" data-dec="1">0</span>%</b><small>System health</small></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="quote" id="stories">
+      <span class="eyebrow reveal">Testimonial</span>
+      <div class="quote-grid">
+        <div class="quote-left reveal">
+          <button class="qnav prev" aria-label="Previous"><svg><use href="#arrow"/></svg></button>
+          <div class="q-avatar" data-q-avatar style="--h:150">MF</div>
+          <div class="q-happy"><b>12K+</b><small>Happy homes</small><span class="stars-row"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></span></div>
+        </div>
+        <div class="quote-right reveal">
+          <span class="qmark">“</span>
+          <blockquote data-q-text>TISE gives us a clear view of our energy production, battery storage and household usage — all from one beautiful dashboard.</blockquote>
+          <div class="q-meta">
+            <div><b data-q-name>Maya Fernandes</b><small data-q-role>Homeowner · 6.2 kW system</small></div>
+            <div class="q-dots"><i class="is-on"></i><i></i><i></i></div>
+            <button class="qnav next" aria-label="Next"><svg><use href="#arrow"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM -->
+    <section class="eco" id="ecosystem">
+      <div class="eco-head reveal">
+        <span class="eyebrow">Connected energy ecosystem</span>
+        <h2>Complete control<br>of solar energy</h2>
+        <p>Every device in your system speaks to TISE, so your home can make the right call on its own.</p>
+      </div>
+      <div class="eco-grid">
+        <article class="eco-card reveal"><img data-shot="eco-solar" alt="" /><div><h3>Solar panels</h3><p>Maximise every hour of sunlight.</p></div></article>
+        <article class="eco-card reveal"><img data-shot="eco-battery" alt="" /><div><h3>Battery storage</h3><p>Store the surplus for after sunset.</p></div></article>
+        <article class="eco-card reveal"><img data-shot="eco-home" alt="" /><div><h3>Home &amp; grid</h3><p>Balance supply and demand, automatically.</p></div></article>
+        <article class="eco-card reveal"><img data-shot="eco-inverter" alt="" /><div><h3>Live displays</h3><p>Your energy on the TV, phone and wall.</p></div></article>
+        <article class="eco-card reveal"><img data-shot="eco-monitor" alt="" /><div><h3>Energy monitoring</h3><p>See the whole system from above.</p></div></article>
+        <article class="eco-card reveal"><img data-shot="eco-smart" alt="" /><div><h3>Smart controls</h3><p>Lights, climate and EV on autopilot.</p></div></article>
+      </div>
+    </section>
+
+    <!-- FINALE -->
+    <section class="finale" id="finale">
+      <div class="finale-stage" id="finaleStage">
+        <canvas id="finaleCanvas" aria-label="A TISE solar home through one day, from sunrise to night"></canvas>
+        <div class="finale-fade" aria-hidden="true"></div>
+
+        <div class="finale-copy">
+          <span class="eyebrow">Built for better energy management</span>
+          <h2>Make every ray of sunshine count</h2>
+          <p>Real-time insight from sunrise to lights-out. Scroll to live one day with TISE.</p>
+          <div class="hero-btns">
+            <a href="#" class="btn btn-mint">Get started today <svg><use href="#arrow"/></svg></a>
+            <a href="#experience" class="btn btn-ghost">Explore dashboard</a>
+          </div>
+        </div>
+
+        <div class="day-hud" id="dayHud">
+          <div class="hud-clock"><svg class="hud-ico"><use href="#sun"/></svg><b data-hud="clock">06:24</b><small data-hud="phase">Sunrise</small></div>
+          <div class="hud-row"><span>Solar</span><b data-hud="solar">0.0 kW</b></div>
+          <div class="hud-row"><span>Battery</span><b data-hud="batt">38%</b></div>
+          <div class="hud-row"><span>Home</span><b data-hud="home">0.6 kW</b></div>
+          <div class="hud-track"><i></i></div>
+        </div>
+
+        <footer class="finale-foot">
+          <nav>
+            <a href="#top">Home</a><a href="#features">Features</a><a href="#why">Solutions</a><a href="#experience">How it works</a><a href="#ecosystem">Insights</a>
+          </nav>
+          <div class="giant" aria-label="TISE"><span>TISE</span><svg><use href="#mark"/></svg></div>
+          <div class="legal"><span>© 2026 TISE. All rights reserved.</span><span>Powered by sunshine</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></span></div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
